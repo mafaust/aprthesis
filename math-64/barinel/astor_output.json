@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 459,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 207,
+    "NR_GENERATIONS": 666,
+    "TOTAL_TIME": 348.767
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "1332",
+      "VALIDATION": "|true|0|2274|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-64\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,083",
+          "INGREDIENT_PARENT": "current \u003d new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective)",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "residuals \u003d oldRes",
+          "BUGGY_CODE_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "OPERATOR": "InsertBeforeOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-64\\/\\/src\\/\\/variant-1332\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java",
+          "LINE": "432",
+          "MP_RANKING": "40",
+          "PATCH_HUNK_CODE": "current \u003d new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective)"
+        }
+      ],
+      "TIME": "348",
+      "GENERATION": "666",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-64\\/\\/src\\/\\/variant-1332",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java\\n@@ -431 +431 @@\\n-\\t\\t\\t\\t\\ttmpVec \u003d residuals;\\n+\\t\\t\\t\\t\\ttmpVec \u003d residuals; \\t\\t\\t\\t\\tcurrent \u003d new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective);\\n\\n"
+    }
+  ]
+}

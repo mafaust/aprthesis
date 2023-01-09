@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
++++ /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+@@ -1444 +1444 @@
+-		int nn = ((4 * end) + pingPong) - 1;
++		int nn = ((4 * end) + pingPong) - 1; 		dN2 = 0;
+

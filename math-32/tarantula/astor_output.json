@@ -1,0 +1,12 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 570,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "TIME_OUT",
+    "NR_FAILLING_COMPILATIONS": 620,
+    "NR_GENERATIONS": 1190,
+    "TOTAL_TIME": 4253.326
+  },
+  "patches": []
+}

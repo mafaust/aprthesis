@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java
++++ /src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java
+@@ -65 +65 @@
+-		this.relativeAccuracy = defaultRelativeAccuracy;
++
+

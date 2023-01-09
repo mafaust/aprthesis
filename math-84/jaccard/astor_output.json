@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 327,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 330,
+    "NR_GENERATIONS": 657,
+    "TOTAL_TIME": 597.259
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "1314",
+      "VALIDATION": "|true|0|2057|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.optimization.direct.MultiDirectional",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-84\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/direct\\/MultiDirectional.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,5",
+          "INGREDIENT_PARENT": "\\/\\/ accept the contracted simplex\\n\\n\\/\\/ check convergence\\nreturn",
+          "PATCH_HUNK_TYPE": "CtReturnImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "if (comparator.compare(contracted, best) \u003c 0) {\\n\\t\\/\\/ accept the contracted simplex\\n\\n\\t\\/\\/ check convergence\\n\\treturn;\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "InsertAfterOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-84\\/\\/src\\/\\/variant-1314\\/org\\/apache\\/commons\\/math\\/optimization\\/direct\\/MultiDirectional.java",
+          "LINE": "90",
+          "MP_RANKING": "8",
+          "PATCH_HUNK_CODE": "\\/\\/ accept the contracted simplex\\n\\n\\/\\/ check convergence\\nreturn"
+        }
+      ],
+      "TIME": "596",
+      "GENERATION": "657",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-84\\/\\/src\\/\\/variant-1314",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/direct\\/MultiDirectional.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/direct\\/MultiDirectional.java\\n@@ -95,2 +95,2 @@\\n-\\t\\t\\t}\\n-\\n+\\t\\t\\t} \\t\\t\\t\\/\\/ accept the contracted simplex \\t\\t\\t\\/\\/ check convergence\\n+\\t\\t\\treturn;\\n\\n"
+    }
+  ]
+}

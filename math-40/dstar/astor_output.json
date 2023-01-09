@@ -1,0 +1,39 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 1797,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 1145,
+    "NR_GENERATIONS": 2942,
+    "TOTAL_TIME": 2757.535,
+    "NR_FAILING_VALIDATION_PROCESS": 1
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "5884",
+      "VALIDATION": "|true|0|3199|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-40\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,032",
+          "INGREDIENT_PARENT": "signChangeIndex \u003d 2",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "if (!((nextX \u003e xA) \u0026\u0026 (nextX \u003c xB))) {\\n\\t\\/\\/ the guessed root is not strictly inside of the tightest bracketing interval\\n\\n\\t\\/\\/ the guessed root is either not strictly inside the interval or it\\n\\t\\/\\/ is a NaN (which occurs when some sampling points share the same y)\\n\\t\\/\\/ we try again with a lower interpolation order\\n\\tif ((signChangeIndex - start) \u003e\u003d (end - signChangeIndex)) {\\n\\t\\t\\/\\/ we have more points before the sign change, drop the lowest point\\n\\t\\t++start;\\n\\t} else {\\n\\t\\t\\/\\/ we have more points after sign change, drop the highest point\\n\\t\\t--end;\\n\\t}\\n\\n\\t\\/\\/ we need to do one more attempt\\n\\tnextX \u003d java.lang.Double.NaN;\\n\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "InsertAfterOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-5884\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "LINE": "254",
+          "MP_RANKING": "182",
+          "PATCH_HUNK_CODE": "signChangeIndex \u003d 2"
+        }
+      ],
+      "TIME": "2756",
+      "GENERATION": "2942",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-5884",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n@@ -271 +271 @@\\n-\\t\\t\\t\\t}\\n+\\t\\t\\t\\t} \\t\\t\\t\\tsignChangeIndex \u003d 2;\\n\\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 219,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 153,
+    "NR_GENERATIONS": 372,
+    "TOTAL_TIME": 201.627
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "744",
+      "VALIDATION": "|true|0|2103|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.linear.EigenDecompositionImpl",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-81\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java",
+          "INGREDIENT_SCOPE": "-",
+          "ORIGINAL_CODE": "b2 \u003d work[nn - 13] \\/ work[nn - 15]",
+          "BUGGY_CODE_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "OPERATOR": "RemoveOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-81\\/\\/src\\/\\/variant-744\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java",
+          "LINE": "1544",
+          "SUSPICIOUNESS": "0,125",
+          "MP_RANKING": "100"
+        }
+      ],
+      "TIME": "201",
+      "GENERATION": "372",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-81\\/\\/src\\/\\/variant-744",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java\\n@@ -1544 +1544 @@\\n-\\t\\t\\t\\t\\t\\tb2 \u003d work[nn - 13] \\/ work[nn - 15];\\n+\\n\\n"
+    }
+  ]
+}

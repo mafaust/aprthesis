@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 25,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 14,
+    "NR_GENERATIONS": 39,
+    "TOTAL_TIME": 206.241
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "78",
+      "VALIDATION": "|true|0|3199|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-40\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,992",
+          "INGREDIENT_PARENT": "signChangeIndex \u003d 2",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "if (agingA \u003e\u003d org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.MAXIMAL_AGING) {\\n\\t\\/\\/ we keep updating the high bracket, try to compensate this\\n\\ttargetY \u003d (-org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.REDUCTION_FACTOR) * yB;\\n} else if (agingB \u003e\u003d org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.MAXIMAL_AGING) {\\n\\t\\/\\/ we keep updating the low bracket, try to compensate this\\n\\ttargetY \u003d (-org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.REDUCTION_FACTOR) * yA;\\n} else {\\n\\t\\/\\/ bracketing is balanced, try to find the root itself\\n\\ttargetY \u003d 0;\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "InsertBeforeOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-78\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "LINE": "233",
+          "MP_RANKING": "67",
+          "PATCH_HUNK_CODE": "signChangeIndex \u003d 2"
+        }
+      ],
+      "TIME": "205",
+      "GENERATION": "39",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-78",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n@@ -232 +232 @@\\n-\\t\\t\\tdouble targetY;\\n+\\t\\t\\tdouble targetY; \\t\\t\\tsignChangeIndex \u003d 2;\\n\\n"
+    }
+  ]
+}

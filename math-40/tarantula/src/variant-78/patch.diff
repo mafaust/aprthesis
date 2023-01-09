@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
++++ /src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+@@ -232 +232 @@
+-			double targetY;
++			double targetY; 			signChangeIndex = 2;
+

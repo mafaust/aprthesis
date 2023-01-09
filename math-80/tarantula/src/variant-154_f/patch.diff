@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
++++ /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+@@ -840,2 +839,0 @@
+-		// initial checks for splits (see Parlett & Marques section 3.3)
+-		flipIfWarranted(n, 2);
+

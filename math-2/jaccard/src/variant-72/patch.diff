@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
++++ /src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+@@ -138 +138 @@
+-				upper = ((int) (java.lang.Math.ceil(tmp))) - 1;
++
+

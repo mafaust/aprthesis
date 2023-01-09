@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 47,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 52,
+    "NR_GENERATIONS": 99,
+    "TOTAL_TIME": 285.269
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "198",
+      "VALIDATION": "|true|0|3199|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-40\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "1",
+          "INGREDIENT_PARENT": "signChangeIndex \u003d 2",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "do {\\n\\n\\t\\/\\/ guess a value for current target, using inverse polynomial interpolation\\n\\tjava.lang.System.arraycopy(x, start, tmpX, start, end - start);\\n\\tnextX \u003d guessX(targetY, tmpX, y, start, end);\\n\\n\\tif (!((nextX \u003e xA) \u0026\u0026 (nextX \u003c xB))) {\\n\\t\\t\\/\\/ the guessed root is not strictly inside of the tightest bracketing interval\\n\\n\\t\\t\\/\\/ the guessed root is either not strictly inside the interval or it\\n\\t\\t\\/\\/ is a NaN (which occurs when some sampling points share the same y)\\n\\t\\t\\/\\/ we try again with a lower interpolation order\\n\\t\\tif ((signChangeIndex - start) \u003e\u003d (end - signChangeIndex)) {\\n\\t\\t\\t\\/\\/ we have more points before the sign change, drop the lowest point\\n\\t\\t\\t++start;\\n\\t\\t} else {\\n\\t\\t\\t\\/\\/ we have more points after sign change, drop the highest point\\n\\t\\t\\t--end;\\n\\t\\t}\\n\\n\\t\\t\\/\\/ we need to do one more attempt\\n\\t\\tnextX \u003d java.lang.Double.NaN;\\n\\n\\t}\\n\\n} while (java.lang.Double.isNaN(nextX) \u0026\u0026 ((end - start) \u003e 1) )",
+          "BUGGY_CODE_TYPE": "CtDoImpl|CtBlockImpl",
+          "OPERATOR": "InsertAfterOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-198\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "LINE": "248",
+          "MP_RANKING": "2",
+          "PATCH_HUNK_CODE": "signChangeIndex \u003d 2"
+        }
+      ],
+      "TIME": "284",
+      "GENERATION": "99",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-198",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n@@ -273 +273 @@\\n-\\t\\t\\t} while (java.lang.Double.isNaN(nextX) \u0026\u0026 ((end - start) \u003e 1) );\\n+\\t\\t\\t} while (java.lang.Double.isNaN(nextX) \u0026\u0026 ((end - start) \u003e 1) ); \\t\\t\\tsignChangeIndex \u003d 2;\\n\\n"
+    }
+  ]
+}

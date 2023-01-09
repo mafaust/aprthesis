@@ -1,0 +1,11 @@
+[0] INFO ProjectConfiguration - Version of the JVM used: 1.8.0_202
+[1] INFO main - Java version of the JDK used to run tests: 1.8.0_202
+[1] INFO main - The compliance of the JVM is:  8
+[2] INFO main - command line arguments: [-location  /Users/marekmazur/astor/defects4j/math-95  -mode  jgenprog  -package  org.apache.commons  -jvm4testexecution  /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/bin  -failing  org.apache.commons.math.distribution.FDistributionTest  -srcjavafolder  /src/java/  -srctestfolder  /src/test/  -binjavafolder  /target/classes/  -bintestfolder  /target/test-classes/  -stopfirst  true  -dependencies  /Users/marekmazur/astor/examples/libs/junit-4.4.jar  -maxgen  1000000  -seed  10  -maxtime  60  -scope  local  -stopfirst  true  -flthreshold  0  -population  1  -faultlocalization  flacoco]
+[5] INFO AstorMain - Running Astor on a JDK at /Users/marekmazur/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre
+Source folders: [/Users/marekmazur/astor/defects4j/math-95/src/java]
+Source Test folders: [/Users/marekmazur/astor/defects4j/math-95/src/test]
+---- Creating spoon model
+Creating model,  Code location from working folder: /Users/marekmazur/astor/defects4j/math-95/src/java
+building model: /Users/marekmazur/astor/defects4j/math-95/src/java, compliance level: 8
+Classpath (Dependencies) for building SpoonModel: [/Users/marekmazur/astor/examples/libs/junit-4.4.jar]

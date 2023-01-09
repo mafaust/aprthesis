@@ -1,0 +1,18 @@
+--- /src/main/java/org/apache/commons/math/ode/events/EventState.java
++++ /src/main/java/org/apache/commons/math/ode/events/EventState.java
+@@ -235,3 +235,3 @@
+-					} else if (java.lang.Double.isNaN(previousEventTime) || 
+-					(java.lang.Math.abs(previousEventTime - root) > convergence)) {
+-						pendingEventTime = root;
++					} else {
++
++
+@@ -244,2 +244,2 @@
+-						}
+-						// either we were not waiting for the event or it has
++						} 						if (java.lang.Double.isNaN(previousEventTime) || (java.lang.Math.abs(previousEventTime - root) > convergence)) { 							pendingEventTime = root; 							if (pendingEvent && (java.lang.Math.abs(t1 - pendingEventTime) <= convergence)) { 								// we were already waiting for this event which was 								// found during a previous call for a step that was 								// rejected, this step must now be accepted since it 								// properly ends exactly at the event occurrence
++								return false;} 							// either we were not waiting for the event or it has
+@@ -249 +249 @@
+-					}
++						}}
+

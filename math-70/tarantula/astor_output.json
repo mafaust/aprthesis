@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 84,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 47,
+    "NR_GENERATIONS": 131,
+    "TOTAL_TIME": 60.029
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "262",
+      "VALIDATION": "|true|0|2186|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-70\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BisectionSolver.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "1",
+          "INGREDIENT_PARENT": "return solve(f, min, max)",
+          "PATCH_HUNK_TYPE": "CtReturnImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "return solve(min, max)",
+          "BUGGY_CODE_TYPE": "CtReturnImpl|CtBlockImpl",
+          "OPERATOR": "ReplaceOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-70\\/\\/src\\/\\/variant-262\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BisectionSolver.java",
+          "LINE": "72",
+          "MP_RANKING": "0",
+          "PATCH_HUNK_CODE": "return solve(f, min, max)"
+        }
+      ],
+      "TIME": "59",
+      "GENERATION": "131",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-70\\/\\/src\\/\\/variant-262",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BisectionSolver.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BisectionSolver.java\\n@@ -71,2 +71,2 @@\\n-\\t *\\/ \\tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.MaxIterationsExceededException, org.apache.commons.math.FunctionEvaluationException {\\n-\\t\\treturn solve(min, max);\\n+\\t *\\/ \\tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.MaxIterationsExceededException, org.apache.commons.math.FunctionEvaluationException { \\t\\treturn solve(f, min, max);\\n+\\n\\n"
+    }
+  ]
+}

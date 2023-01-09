@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
++++ /src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+@@ -271 +271 @@
+-				}
++				} 				signChangeIndex = 2;
+

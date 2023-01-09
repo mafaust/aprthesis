@@ -1,0 +1,35 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 2,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 1,
+    "NR_GENERATIONS": 3,
+    "TOTAL_TIME": 14.092
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "6",
+      "VALIDATION": "|true|0|1986|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-85\\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java",
+          "INGREDIENT_SCOPE": "-",
+          "ORIGINAL_CODE": "throw new org.apache.commons.math.ConvergenceException(\\n\\\"number of iterations\u003d{0}, maximum iterations\u003d{1}, \\\" + \\n(\\\"initial\u003d{2}, lower bound\u003d{3}, upper bound\u003d{4}, final a value\u003d{5}, \\\" + \\n\\\"final b value\u003d{6}, f(a)\u003d{7}, f(b)\u003d{8}\\\"), \\nnumIterations, maximumIterations, initial, \\nlowerBound, upperBound, a, b, fa, fb)",
+          "BUGGY_CODE_TYPE": "CtThrowImpl|CtBlockImpl",
+          "OPERATOR": "RemoveOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-85\\/\\/src\\/\\/variant-6\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java",
+          "LINE": "199",
+          "SUSPICIOUNESS": "0,167",
+          "MP_RANKING": "88"
+        }
+      ],
+      "TIME": "14",
+      "GENERATION": "3",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-85\\/\\/src\\/\\/variant-6",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java\\n+++ \\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java\\n@@ -199,6 +199,6 @@\\n-\\t\\t\\tthrow new org.apache.commons.math.ConvergenceException(\\n-\\t\\t\\t\\\"number of iterations\u003d{0}, maximum iterations\u003d{1}, \\\" + \\n-\\t\\t\\t(\\\"initial\u003d{2}, lower bound\u003d{3}, upper bound\u003d{4}, final a value\u003d{5}, \\\" + \\n-\\t\\t\\t\\\"final b value\u003d{6}, f(a)\u003d{7}, f(b)\u003d{8}\\\"), \\n-\\t\\t\\tnumIterations, maximumIterations, initial, \\n-\\t\\t\\tlowerBound, upperBound, a, b, fa, fb);\\n+\\n+\\n+\\n+\\n+\\n+\\n\\n"
+    }
+  ]
+}

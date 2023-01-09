@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 59,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 60,
+    "NR_GENERATIONS": 119,
+    "TOTAL_TIME": 94.853
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "238",
+      "VALIDATION": "|true|0|1986|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-85\\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,992",
+          "INGREDIENT_PARENT": "if (maximumIterations \u003c\u003d 0) {\\n\\tthrow org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(\\n\\t\\\"bad value for maximum iterations number: {0}\\\", maximumIterations);\\n}",
+          "PATCH_HUNK_TYPE": "CtIfImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "if ((fa * fb) \u003e\u003d 0.0) {\\n\\tthrow new org.apache.commons.math.ConvergenceException(\\n\\t\\\"number of iterations\u003d{0}, maximum iterations\u003d{1}, \\\" + \\n\\t(\\\"initial\u003d{2}, lower bound\u003d{3}, upper bound\u003d{4}, final a value\u003d{5}, \\\" + \\n\\t\\\"final b value\u003d{6}, f(a)\u003d{7}, f(b)\u003d{8}\\\"), \\n\\tnumIterations, maximumIterations, initial, \\n\\tlowerBound, upperBound, a, b, fa, fb);\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "ReplaceOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-85\\/\\/src\\/\\/variant-238\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java",
+          "LINE": "198",
+          "MP_RANKING": "45",
+          "PATCH_HUNK_CODE": "if (maximumIterations \u003c\u003d 0) {\\n\\tthrow org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(\\n\\t\\\"bad value for maximum iterations number: {0}\\\", maximumIterations);\\n}"
+        }
+      ],
+      "TIME": "94",
+      "GENERATION": "119",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-85\\/\\/src\\/\\/variant-238",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java\\n+++ \\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java\\n@@ -196 +196 @@\\n-\\t\\t((a \u003e lowerBound) || (b \u003c upperBound)) );\\n+\\t\\t((a \u003e lowerBound) || (b \u003c upperBound)) ); \\t\\tif (maximumIterations \u003c\u003d 0) { \\t\\t\\tthrow org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(\\\"bad value for maximum iterations number: {0}\\\", maximumIterations);}\\n@@ -198,8 +198,8 @@\\n-\\t\\tif ((fa * fb) \u003e\u003d 0.0) {\\n-\\t\\t\\tthrow new org.apache.commons.math.ConvergenceException(\\n-\\t\\t\\t\\\"number of iterations\u003d{0}, maximum iterations\u003d{1}, \\\" + \\n-\\t\\t\\t(\\\"initial\u003d{2}, lower bound\u003d{3}, upper bound\u003d{4}, final a value\u003d{5}, \\\" + \\n-\\t\\t\\t\\\"final b value\u003d{6}, f(a)\u003d{7}, f(b)\u003d{8}\\\"), \\n-\\t\\t\\tnumIterations, maximumIterations, initial, \\n-\\t\\t\\tlowerBound, upperBound, a, b, fa, fb);\\n-\\t\\t}\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n\\n"
+    }
+  ]
+}

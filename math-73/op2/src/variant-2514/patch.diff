@@ -1,0 +1,11 @@
+--- /src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java
++++ /src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java
+@@ -134 +134 @@
+-		}
++		} 		return solve(f, min, max);
+@@ -137,2 +137,2 @@
+-		// full Brent algorithm starting with provided initial guess
+-		return solve(f, min, yMin, max, yMax, initial, yInitial);
++
++
+

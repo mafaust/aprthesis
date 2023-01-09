@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math3/complex/Complex.java
++++ /src/main/java/org/apache/commons/math3/complex/Complex.java
+@@ -300 +300 @@
+-			return org.apache.commons.math3.complex.Complex.NaN;
++			return org.apache.commons.math3.complex.Complex.INF;
+

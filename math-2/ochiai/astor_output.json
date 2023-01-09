@@ -1,0 +1,35 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 37,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 34,
+    "NR_GENERATIONS": 71,
+    "TOTAL_TIME": 224.881
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "142",
+      "VALIDATION": "|true|0|5195|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math3.distribution.AbstractIntegerDistribution",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-2\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java",
+          "INGREDIENT_SCOPE": "-",
+          "ORIGINAL_CODE": "if (chebyshevApplies) {\\n\\tdouble k \u003d org.apache.commons.math3.util.FastMath.sqrt((1.0 - p) \\/ p);\\n\\tdouble tmp \u003d mu - (k * sigma);\\n\\tif (tmp \u003e lower) {\\n\\t\\tlower \u003d ((int) (java.lang.Math.ceil(tmp))) - 1;\\n\\t}\\n\\tk \u003d 1.0 \\/ k;\\n\\ttmp \u003d mu + (k * sigma);\\n\\tif (tmp \u003c upper) {\\n\\t\\tupper \u003d ((int) (java.lang.Math.ceil(tmp))) - 1;\\n\\t}\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "RemoveOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-2\\/\\/src\\/\\/variant-142\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java",
+          "LINE": "129",
+          "SUSPICIOUNESS": "0,12",
+          "MP_RANKING": "34"
+        }
+      ],
+      "TIME": "224",
+      "GENERATION": "71",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-2\\/\\/src\\/\\/variant-142",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java\\n@@ -129,12 +129,12 @@\\n-\\t\\tif (chebyshevApplies) {\\n-\\t\\t\\tdouble k \u003d org.apache.commons.math3.util.FastMath.sqrt((1.0 - p) \\/ p);\\n-\\t\\t\\tdouble tmp \u003d mu - (k * sigma);\\n-\\t\\t\\tif (tmp \u003e lower) {\\n-\\t\\t\\t\\tlower \u003d ((int) (java.lang.Math.ceil(tmp))) - 1;\\n-\\t\\t\\t}\\n-\\t\\t\\tk \u003d 1.0 \\/ k;\\n-\\t\\t\\ttmp \u003d mu + (k * sigma);\\n-\\t\\t\\tif (tmp \u003c upper) {\\n-\\t\\t\\t\\tupper \u003d ((int) (java.lang.Math.ceil(tmp))) - 1;\\n-\\t\\t\\t}\\n-\\t\\t}\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n\\n"
+    }
+  ]
+}

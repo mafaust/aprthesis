@@ -1,0 +1,379 @@
+--- /src/main/java/org/apache/commons/math3/complex/Complex.java
++++ /src/main/java/org/apache/commons/math3/complex/Complex.java
+@@ -305,2 +304,0 @@
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+@@ -308,3 +305,0 @@
+-		if (isInfinite) {
+-			return org.apache.commons.math3.complex.Complex.ZERO;
+-		}
+@@ -312,10 +306,0 @@
+-		if (org.apache.commons.math3.util.FastMath.abs(real) < org.apache.commons.math3.util.FastMath.abs(imaginary)) {
+-			double q = real / imaginary;
+-			double scale = 1.0 / ((real * q) + imaginary);
+-			return createComplex(scale * q, -scale);
+-		} else {
+-			double q = imaginary / real;
+-			double scale = 1.0 / ((imaginary * q) + real);
+-			return createComplex(scale, (-scale) * q);
+-		}
+-	}
+@@ -323 +308,160 @@
+-	/**
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++			return org.apache.commons.math3.complex.Complex.INF;} 		if (isInfinite) { 			return org.apache.commons.math3.complex.Complex.ZERO;} 		if (org.apache.commons.math3.util.FastMath.abs(real) < org.apache.commons.math3.util.FastMath.abs(imaginary)) { 			double q = real / imaginary; 			double scale = 1.0 / ((real * q) + imaginary); 			return createComplex(scale * q, -scale);} else { 			double q = imaginary / real; 			double scale = 1.0 / ((imaginary * q) + real); 			return createComplex(scale, (-scale) * q);}} 	/**
+@@ -338,17 +482 @@
+-	 */ 	@java.lang.Override
+-	public boolean equals(java.lang.Object other) {
+-		if (this == other) {
+-			return true;
+-		}
+-		if (other instanceof org.apache.commons.math3.complex.Complex) {
+-			org.apache.commons.math3.complex.Complex c = ((org.apache.commons.math3.complex.Complex) (other));
+-			if (c.isNaN) {
+-				return isNaN;
+-			} else {
+-				return (real == c.real) && (imaginary == c.imaginary);
+-			}
+-		}
+-		return false;
+-	}
+-
+-	/**
++	 */ 	@java.lang.Override 	public boolean equals(java.lang.Object other) { 		if (this == other) { 			return true;} 		if (other instanceof org.apache.commons.math3.complex.Complex) { 			org.apache.commons.math3.complex.Complex c = ((org.apache.commons.math3.complex.Complex) (other)); 			if (c.isNaN) { 				return isNaN;} else { 				return (real == c.real) && (imaginary == c.imaginary);}} 		return false;} 	/**
+@@ -360,11 +488 @@
+-	 */
+-	@java.lang.Override
+-	public int hashCode() {
+-		if (isNaN) {
+-			return 7;
+-		}
+-		return 37 * ((17 * org.apache.commons.math3.util.MathUtils.hash(imaginary)) + 
+-		org.apache.commons.math3.util.MathUtils.hash(real));
+-	}
+-
+-	/**
++	 */ 	@java.lang.Override 	public int hashCode() { 		if (isNaN) { 			return 7;} 		return 37 * ((17 * org.apache.commons.math3.util.MathUtils.hash(imaginary)) + org.apache.commons.math3.util.MathUtils.hash(real));} 	/**
+@@ -374,6 +492 @@
+-	 */
+-	public double getImaginary() {
+-		return imaginary;
+-	}
+-
+-	/**
++	 */ 	public double getImaginary() { 		return imaginary;} 	/**
+@@ -383,6 +496 @@
+-	 */
+-	public double getReal() {
+-		return real;
+-	}
+-
+-	/**
++	 */ 	public double getReal() { 		return real;} 	/**
+@@ -394,6 +502 @@
+-	 */
+-	public boolean isNaN() {
+-		return isNaN;
+-	}
+-
+-	/**
++	 */ 	public boolean isNaN() { 		return isNaN;} 	/**
+@@ -407,6 +510 @@
+-	 */
+-	public boolean isInfinite() {
+-		return isInfinite;
+-	}
+-
+-	/**
++	 */ 	public boolean isInfinite() { 		return isInfinite;} 	/**
+@@ -437,17 +535,2 @@
+-	 */ 	public org.apache.commons.math3.complex.Complex multiply(org.apache.commons.math3.complex.Complex factor) throws org.apache.commons.math3.exception.NullArgumentException {
+-		org.apache.commons.math3.util.MathUtils.checkNotNull(factor);
+-		if (isNaN || factor.isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-		if (((java.lang.Double.isInfinite(real) || 
+-		java.lang.Double.isInfinite(imaginary)) || 
+-		java.lang.Double.isInfinite(factor.real)) || 
+-		java.lang.Double.isInfinite(factor.imaginary)) {
+-			// we don't use isInfinite() to avoid testing for NaN again
+-			return org.apache.commons.math3.complex.Complex.INF;
+-		}
+-		return createComplex((real * factor.real) - (imaginary * factor.imaginary), 
+-		(real * factor.imaginary) + (imaginary * factor.real));
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex multiply(org.apache.commons.math3.complex.Complex factor) throws org.apache.commons.math3.exception.NullArgumentException { 		org.apache.commons.math3.util.MathUtils.checkNotNull(factor); 		if (isNaN || factor.isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		if (((java.lang.Double.isInfinite(real) || java.lang.Double.isInfinite(imaginary)) || java.lang.Double.isInfinite(factor.real)) || java.lang.Double.isInfinite(factor.imaginary)) { 			// we don't use isInfinite() to avoid testing for NaN again
++			return org.apache.commons.math3.complex.Complex.INF;} 		return createComplex((real * factor.real) - (imaginary * factor.imaginary), (real * factor.imaginary) + (imaginary * factor.real));} 	/**
+@@ -461,12 +544 @@
+-	 */ 	public org.apache.commons.math3.complex.Complex multiply(final int factor) {
+-		if (isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-		if (java.lang.Double.isInfinite(real) || 
+-		java.lang.Double.isInfinite(imaginary)) {
+-			return org.apache.commons.math3.complex.Complex.INF;
+-		}
+-		return createComplex(real * factor, imaginary * factor);
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex multiply(final int factor) { 		if (isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		if (java.lang.Double.isInfinite(real) || java.lang.Double.isInfinite(imaginary)) { 			return org.apache.commons.math3.complex.Complex.INF;} 		return createComplex(real * factor, imaginary * factor);} 	/**
+@@ -480,14 +552,2 @@
+-	 */ 	public org.apache.commons.math3.complex.Complex multiply(double factor) {
+-		if (isNaN || java.lang.Double.isNaN(factor)) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-		if ((java.lang.Double.isInfinite(real) || 
+-		java.lang.Double.isInfinite(imaginary)) || 
+-		java.lang.Double.isInfinite(factor)) {
+-			// we don't use isInfinite() to avoid testing for NaN again
+-			return org.apache.commons.math3.complex.Complex.INF;
+-		}
+-		return createComplex(real * factor, imaginary * factor);
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex multiply(double factor) { 		if (isNaN || java.lang.Double.isNaN(factor)) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		if ((java.lang.Double.isInfinite(real) || java.lang.Double.isInfinite(imaginary)) || java.lang.Double.isInfinite(factor)) { 			// we don't use isInfinite() to avoid testing for NaN again
++			return org.apache.commons.math3.complex.Complex.INF;} 		return createComplex(real * factor, imaginary * factor);} 	/**
+@@ -499,10 +559 @@
+-	 */
+-	public org.apache.commons.math3.complex.Complex negate() {
+-		if (isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-
+-		return createComplex(-real, -imaginary);
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex negate() { 		if (isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		return createComplex(-real, -imaginary);} 	/**
+@@ -527,11 +578 @@
+-	 */ 	public org.apache.commons.math3.complex.Complex subtract(org.apache.commons.math3.complex.Complex subtrahend) throws org.apache.commons.math3.exception.NullArgumentException {
+-		org.apache.commons.math3.util.MathUtils.checkNotNull(subtrahend);
+-		if (isNaN || subtrahend.isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-
+-		return createComplex(real - subtrahend.getReal(), 
+-		imaginary - subtrahend.getImaginary());
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex subtract(org.apache.commons.math3.complex.Complex subtrahend) throws org.apache.commons.math3.exception.NullArgumentException { 		org.apache.commons.math3.util.MathUtils.checkNotNull(subtrahend); 		if (isNaN || subtrahend.isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		return createComplex(real - subtrahend.getReal(), imaginary - subtrahend.getImaginary());} 	/**
+@@ -545,8 +586 @@
+-	 */ 	public org.apache.commons.math3.complex.Complex subtract(double subtrahend) {
+-		if (isNaN || java.lang.Double.isNaN(subtrahend)) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-		return createComplex(real - subtrahend, imaginary);
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex subtract(double subtrahend) { 		if (isNaN || java.lang.Double.isNaN(subtrahend)) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		return createComplex(real - subtrahend, imaginary);} 	/**
+@@ -567,10 +601 @@
+-	 */
+-	public org.apache.commons.math3.complex.Complex acos() {
+-		if (isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-
+-		return this.add(this.sqrt1z().multiply(org.apache.commons.math3.complex.Complex.I)).log().multiply(org.apache.commons.math3.complex.Complex.I.negate());
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex acos() { 		if (isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		return this.add(this.sqrt1z().multiply(org.apache.commons.math3.complex.Complex.I)).log().multiply(org.apache.commons.math3.complex.Complex.I.negate());} 	/**
+@@ -591,10 +616 @@
+-	 */
+-	public org.apache.commons.math3.complex.Complex asin() {
+-		if (isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-
+-		return sqrt1z().add(this.multiply(org.apache.commons.math3.complex.Complex.I)).log().multiply(org.apache.commons.math3.complex.Complex.I.negate());
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex asin() { 		if (isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		return sqrt1z().add(this.multiply(org.apache.commons.math3.complex.Complex.I)).log().multiply(org.apache.commons.math3.complex.Complex.I.negate());} 	/**
+@@ -615,11 +631 @@
+-	 */
+-	public org.apache.commons.math3.complex.Complex atan() {
+-		if (isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-
+-		return this.add(org.apache.commons.math3.complex.Complex.I).divide(org.apache.commons.math3.complex.Complex.I.subtract(this)).log().multiply(
+-		org.apache.commons.math3.complex.Complex.I.divide(createComplex(2.0, 0.0)));
+-	}
+-
+-	/**
++	 */ 	public org.apache.commons.math3.complex.Complex atan() { 		if (isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		return this.add(org.apache.commons.math3.complex.Complex.I).divide(org.apache.commons.math3.complex.Complex.I.subtract(this)).log().multiply(org.apache.commons.math3.complex.Complex.I.divide(createComplex(2.0, 0.0)));} 	/**
+@@ -656,7 +662 @@
+-	 */
+-	public org.apache.commons.math3.complex.Complex cos() {
+-		if (isNaN) {
+-			return org.apache.commons.math3.complex.Complex.NaN;
+-		}
+-
+-		return createComplex(org.apache.commons.math3.util.FastMath.cos(real) * org.apache.commons.math3.util.FastMath.cosh(imaginary), 
++	 */ 	public org.apache.commons.math3.complex.Complex cos() { 		if (isNaN) { 			return org.apache.commons.math3.complex.Complex.NaN;} 		return createComplex(org.apache.commons.math3.util.FastMath.cos(real) * org.apache.commons.math3.util.FastMath.cosh(imaginary), 
+

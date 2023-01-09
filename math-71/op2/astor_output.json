@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 97,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 53,
+    "NR_GENERATIONS": 150,
+    "TOTAL_TIME": 530.258
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "300",
+      "VALIDATION": "|true|0|2171|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.ConvergingAlgorithmImpl",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-71\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "1,914",
+          "INGREDIENT_PARENT": "this.absoluteAccuracy \u003d defaultAbsoluteAccuracy",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "this.relativeAccuracy \u003d defaultRelativeAccuracy",
+          "BUGGY_CODE_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "OPERATOR": "ReplaceOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-300\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java",
+          "LINE": "65",
+          "MP_RANKING": "225",
+          "PATCH_HUNK_CODE": "this.absoluteAccuracy \u003d defaultAbsoluteAccuracy"
+        }
+      ],
+      "TIME": "529",
+      "GENERATION": "150",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-300",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java\\n@@ -64,2 +64,2 @@\\n-\\t\\tthis.absoluteAccuracy \u003d defaultAbsoluteAccuracy;\\n-\\t\\tthis.relativeAccuracy \u003d defaultRelativeAccuracy;\\n+\\t\\tthis.absoluteAccuracy \u003d defaultAbsoluteAccuracy; \\t\\tthis.absoluteAccuracy \u003d defaultAbsoluteAccuracy;\\n+\\n\\n"
+    }
+  ]
+}

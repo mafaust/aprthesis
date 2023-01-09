@@ -1,0 +1,34 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 2,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_GENERATIONS": 2,
+    "TOTAL_TIME": 204.652
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "4",
+      "VALIDATION": "|true|0|4850|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math3.distribution.DiscreteDistribution",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-8\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/DiscreteDistribution.java",
+          "INGREDIENT_SCOPE": "-",
+          "ORIGINAL_CODE": "for (int i \u003d 0; i \u003c sampleSize; i++) {\\n\\tout[i] \u003d sample();\\n}",
+          "BUGGY_CODE_TYPE": "CtForImpl|CtBlockImpl",
+          "OPERATOR": "RemoveOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-8\\/\\/src\\/\\/variant-4\\/org\\/apache\\/commons\\/math3\\/distribution\\/DiscreteDistribution.java",
+          "LINE": "189",
+          "SUSPICIOUNESS": "1",
+          "MP_RANKING": "3"
+        }
+      ],
+      "TIME": "204",
+      "GENERATION": "2",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-8\\/\\/src\\/\\/variant-4",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/DiscreteDistribution.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/DiscreteDistribution.java\\n@@ -189,3 +189,3 @@\\n-\\t\\tfor (int i \u003d 0; i \u003c sampleSize; i++) {\\n-\\t\\t\\tout[i] \u003d sample();\\n-\\t\\t}\\n+\\n+\\n+\\n\\n"
+    }
+  ]
+}

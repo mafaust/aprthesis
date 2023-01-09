@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 119,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 79,
+    "NR_GENERATIONS": 198,
+    "TOTAL_TIME": 771.782
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "396",
+      "VALIDATION": "|true|0|2171|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.ConvergingAlgorithmImpl",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-71\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,103",
+          "INGREDIENT_PARENT": "this.iterationCount \u003d 0",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "this.defaultRelativeAccuracy \u003d 1.0E-14",
+          "BUGGY_CODE_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "OPERATOR": "ReplaceOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-396\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java",
+          "LINE": "63",
+          "MP_RANKING": "319",
+          "PATCH_HUNK_CODE": "this.iterationCount \u003d 0"
+        }
+      ],
+      "TIME": "770",
+      "GENERATION": "198",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-396",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java\\n@@ -63,6 +63,6 @@\\n-\\t\\tthis.defaultRelativeAccuracy \u003d 1.0E-14;\\n-\\t\\tthis.absoluteAccuracy \u003d defaultAbsoluteAccuracy;\\n-\\t\\tthis.relativeAccuracy \u003d defaultRelativeAccuracy;\\n-\\t\\tthis.defaultMaximalIterationCount \u003d defaultMaximalIterationCount;\\n-\\t\\tthis.maximalIterationCount \u003d defaultMaximalIterationCount;\\n-\\t\\tthis.iterationCount \u003d 0;\\n+\\n+\\n+\\n+\\n+\\n+\\t\\tthis.iterationCount \u003d 0; \\t\\tthis.absoluteAccuracy \u003d defaultAbsoluteAccuracy; \\t\\tthis.relativeAccuracy \u003d defaultRelativeAccuracy; \\t\\tthis.defaultMaximalIterationCount \u003d defaultMaximalIterationCount; \\t\\tthis.maximalIterationCount \u003d defaultMaximalIterationCount; \\t\\tthis.iterationCount \u003d 0;\\n\\n"
+    }
+  ]
+}

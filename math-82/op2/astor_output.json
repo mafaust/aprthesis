@@ -1,0 +1,35 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 44,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 55,
+    "NR_GENERATIONS": 99,
+    "TOTAL_TIME": 57.864
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "198",
+      "VALIDATION": "|true|0|2059|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.optimization.linear.SimplexSolver",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-82\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/linear\\/SimplexSolver.java",
+          "INGREDIENT_SCOPE": "-",
+          "ORIGINAL_CODE": "minValue \u003d tableau.getEntry(0, i)",
+          "BUGGY_CODE_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "OPERATOR": "RemoveOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-82\\/\\/src\\/\\/variant-198\\/org\\/apache\\/commons\\/math\\/optimization\\/linear\\/SimplexSolver.java",
+          "LINE": "63",
+          "SUSPICIOUNESS": "0,994",
+          "MP_RANKING": "36"
+        }
+      ],
+      "TIME": "57",
+      "GENERATION": "99",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-82\\/\\/src\\/\\/variant-198",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/linear\\/SimplexSolver.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/linear\\/SimplexSolver.java\\n@@ -62,2 +62,2 @@\\n-\\t\\t\\tif (org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon) \u003c 0) {\\n-\\t\\t\\t\\tminValue \u003d tableau.getEntry(0, i);\\n+\\t\\t\\tif (org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon) \u003c 0)\\n+\\n@@ -65 +65 @@\\n-\\t\\t\\t}\\n+\\n\\n"
+    }
+  ]
+}

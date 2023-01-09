@@ -1,0 +1,8 @@
+--- /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
++++ /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+@@ -1543,2 +1543,2 @@
+-					if ((end - start) > 2) {
+-						b2 = work[nn - 13] / work[nn - 15];
++					if ((end - start) > 2) { 						cachedV = null;
++
+

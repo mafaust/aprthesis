@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 328,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 242,
+    "NR_GENERATIONS": 570,
+    "TOTAL_TIME": 2441.085
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "1140",
+      "VALIDATION": "|true|0|2171|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.ode.events.EventState",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-71\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ode\\/events\\/EventState.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,96",
+          "INGREDIENT_PARENT": "if (pendingEvent \u0026\u0026 (java.lang.Math.abs(t1 - pendingEventTime) \u003c\u003d convergence)) {\\n\\t\\/\\/ we were already waiting for this event which was\\n\\t\\/\\/ found during a previous call for a step that was\\n\\t\\/\\/ rejected, this step must now be accepted since it\\n\\t\\/\\/ properly ends exactly at the event occurrence\\n\\treturn false;\\n}",
+          "PATCH_HUNK_TYPE": "CtIfImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "if (java.lang.Double.isNaN(previousEventTime) || \\n(java.lang.Math.abs(previousEventTime - root) \u003e convergence)) {\\n\\tpendingEventTime \u003d root;\\n\\tif (pendingEvent \u0026\u0026 (java.lang.Math.abs(t1 - pendingEventTime) \u003c\u003d convergence)) {\\n\\t\\t\\/\\/ we were already waiting for this event which was\\n\\t\\t\\/\\/ found during a previous call for a step that was\\n\\t\\t\\/\\/ rejected, this step must now be accepted since it\\n\\t\\t\\/\\/ properly ends exactly at the event occurrence\\n\\t\\treturn false;\\n\\t}\\n\\t\\/\\/ either we were not waiting for the event or it has\\n\\t\\/\\/ moved in such a way the step cannot be accepted\\n\\tpendingEvent \u003d true;\\n\\treturn true;\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "InsertBeforeOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-1140\\/org\\/apache\\/commons\\/math\\/ode\\/events\\/EventState.java",
+          "LINE": "235",
+          "MP_RANKING": "125",
+          "PATCH_HUNK_CODE": "if (pendingEvent \u0026\u0026 (java.lang.Math.abs(t1 - pendingEventTime) \u003c\u003d convergence)) {\\n\\t\\/\\/ we were already waiting for this event which was\\n\\t\\/\\/ found during a previous call for a step that was\\n\\t\\/\\/ rejected, this step must now be accepted since it\\n\\t\\/\\/ properly ends exactly at the event occurrence\\n\\treturn false;\\n}"
+        }
+      ],
+      "TIME": "2428",
+      "GENERATION": "570",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-1140",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ode\\/events\\/EventState.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ode\\/events\\/EventState.java\\n@@ -235,3 +235,3 @@\\n-\\t\\t\\t\\t\\t} else if (java.lang.Double.isNaN(previousEventTime) || \\n-\\t\\t\\t\\t\\t(java.lang.Math.abs(previousEventTime - root) \u003e convergence)) {\\n-\\t\\t\\t\\t\\t\\tpendingEventTime \u003d root;\\n+\\t\\t\\t\\t\\t} else {\\n+\\n+\\n@@ -244,2 +244,2 @@\\n-\\t\\t\\t\\t\\t\\t}\\n-\\t\\t\\t\\t\\t\\t\\/\\/ either we were not waiting for the event or it has\\n+\\t\\t\\t\\t\\t\\t} \\t\\t\\t\\t\\t\\tif (java.lang.Double.isNaN(previousEventTime) || (java.lang.Math.abs(previousEventTime - root) \u003e convergence)) { \\t\\t\\t\\t\\t\\t\\tpendingEventTime \u003d root; \\t\\t\\t\\t\\t\\t\\tif (pendingEvent \u0026\u0026 (java.lang.Math.abs(t1 - pendingEventTime) \u003c\u003d convergence)) { \\t\\t\\t\\t\\t\\t\\t\\t\\/\\/ we were already waiting for this event which was \\t\\t\\t\\t\\t\\t\\t\\t\\/\\/ found during a previous call for a step that was \\t\\t\\t\\t\\t\\t\\t\\t\\/\\/ rejected, this step must now be accepted since it \\t\\t\\t\\t\\t\\t\\t\\t\\/\\/ properly ends exactly at the event occurrence\\n+\\t\\t\\t\\t\\t\\t\\t\\treturn false;} \\t\\t\\t\\t\\t\\t\\t\\/\\/ either we were not waiting for the event or it has\\n@@ -249 +249 @@\\n-\\t\\t\\t\\t\\t}\\n+\\t\\t\\t\\t\\t\\t}}\\n\\n"
+    }
+  ]
+}

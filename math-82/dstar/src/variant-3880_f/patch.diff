@@ -1,0 +1,10 @@
+--- /src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java
++++ /src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java
+@@ -47,2 +47 @@
+-			if (org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon) < 0) {
+-				minValue = tableau.getEntry(0, i);
++			if (org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon) < 0)
+@@ -50 +49 @@
+-			}
++
+

@@ -1,0 +1,35 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 130,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 70,
+    "NR_GENERATIONS": 200,
+    "TOTAL_TIME": 134.562
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "400",
+      "VALIDATION": "|true|0|2104|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.linear.EigenDecompositionImpl",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-80\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java",
+          "INGREDIENT_SCOPE": "-",
+          "ORIGINAL_CODE": "for (int i \u003d 0; i \u003c j; i +\u003d 4) {\\n\\tfor (int k \u003d 0; k \u003c 4; k +\u003d step) {\\n\\t\\tfinal double tmp \u003d work[i + k];\\n\\t\\twork[i + k] \u003d work[j - k];\\n\\t\\twork[j - k] \u003d tmp;\\n\\t}\\n\\tj -\u003d 4;\\n}",
+          "BUGGY_CODE_TYPE": "CtForImpl|CtBlockImpl",
+          "OPERATOR": "RemoveOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-80\\/\\/src\\/\\/variant-400\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java",
+          "LINE": "1136",
+          "SUSPICIOUNESS": "0,167",
+          "MP_RANKING": "103"
+        }
+      ],
+      "TIME": "134",
+      "GENERATION": "200",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-80\\/\\/src\\/\\/variant-400",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/linear\\/EigenDecompositionImpl.java\\n@@ -1136,8 +1136,8 @@\\n-\\t\\t\\tfor (int i \u003d 0; i \u003c j; i +\u003d 4) {\\n-\\t\\t\\t\\tfor (int k \u003d 0; k \u003c 4; k +\u003d step) {\\n-\\t\\t\\t\\t\\tfinal double tmp \u003d work[i + k];\\n-\\t\\t\\t\\t\\twork[i + k] \u003d work[j - k];\\n-\\t\\t\\t\\t\\twork[j - k] \u003d tmp;\\n-\\t\\t\\t\\t}\\n-\\t\\t\\t\\tj -\u003d 4;\\n-\\t\\t\\t}\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n\\n"
+    }
+  ]
+}

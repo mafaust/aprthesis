@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 705,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 382,
+    "NR_GENERATIONS": 1087,
+    "TOTAL_TIME": 838.281
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "2174",
+      "VALIDATION": "|true|0|2274|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-64\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,2",
+          "INGREDIENT_PARENT": "current \u003d new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective)",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "\\/\\/ test for successful iteration.\\nif (ratio \u003e\u003d 1.0E-4) {\\n\\t\\/\\/ successful iteration, update the norm\\n\\tfirstIteration \u003d false;\\n\\txNorm \u003d 0;\\n\\tfor (int k \u003d 0; k \u003c cols; ++k) {\\n\\t\\tdouble xK \u003d diag[k] * point[k];\\n\\t\\txNorm +\u003d xK * xK;\\n\\t}\\n\\txNorm \u003d java.lang.Math.sqrt(xNorm);\\n\\n\\t\\/\\/ tests for convergence.\\n\\t\\/\\/ we use the vectorial convergence checker\\n} else {\\n\\t\\/\\/ failed iteration, reset the previous values\\n\\tcost \u003d previousCost;\\n\\tfor (int j \u003d 0; j \u003c solvedCols; ++j) {\\n\\t\\tint pj \u003d permutation[j];\\n\\t\\tpoint[pj] \u003d oldX[pj];\\n\\t}\\n\\ttmpVec \u003d residuals;\\n\\tresiduals \u003d oldRes;\\n\\toldRes \u003d tmpVec;\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "InsertAfterOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-64\\/\\/src\\/\\/variant-2174\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java",
+          "LINE": "412",
+          "MP_RANKING": "211",
+          "PATCH_HUNK_CODE": "current \u003d new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective)"
+        }
+      ],
+      "TIME": "837",
+      "GENERATION": "1087",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-64\\/\\/src\\/\\/variant-2174",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/optimization\\/general\\/LevenbergMarquardtOptimizer.java\\n@@ -434 +434 @@\\n-\\t\\t\\t\\t}\\n+\\t\\t\\t\\t} \\t\\t\\t\\tcurrent \u003d new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective);\\n\\n"
+    }
+  ]
+}

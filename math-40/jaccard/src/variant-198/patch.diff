@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
++++ /src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+@@ -273 +273 @@
+-			} while (java.lang.Double.isNaN(nextX) && ((end - start) > 1) );
++			} while (java.lang.Double.isNaN(nextX) && ((end - start) > 1) ); 			signChangeIndex = 2;
+

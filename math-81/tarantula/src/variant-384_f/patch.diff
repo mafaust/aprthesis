@@ -1,0 +1,5 @@
+--- /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
++++ /src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+@@ -1381,0 +1382 @@
++		dN2 = 0;
+

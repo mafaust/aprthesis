@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 28,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 42,
+    "NR_GENERATIONS": 70,
+    "TOTAL_TIME": 223.816
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "140",
+      "VALIDATION": "|true|0|5195|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math3.distribution.AbstractIntegerDistribution",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-2\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,987",
+          "INGREDIENT_PARENT": "if (p \u003d\u003d 0.0) {\\n\\treturn lower;\\n}",
+          "PATCH_HUNK_TYPE": "CtIfImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "if (tmp \u003c upper) {\\n\\tupper \u003d ((int) (java.lang.Math.ceil(tmp))) - 1;\\n}",
+          "BUGGY_CODE_TYPE": "CtIfImpl|CtBlockImpl",
+          "OPERATOR": "ReplaceOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-2\\/\\/src\\/\\/variant-140\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java",
+          "LINE": "137",
+          "MP_RANKING": "29",
+          "PATCH_HUNK_CODE": "if (p \u003d\u003d 0.0) {\\n\\treturn lower;\\n}"
+        }
+      ],
+      "TIME": "223",
+      "GENERATION": "70",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-2\\/\\/src\\/\\/variant-140",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/distribution\\/AbstractIntegerDistribution.java\\n@@ -136,4 +136,4 @@\\n-\\t\\t\\ttmp \u003d mu + (k * sigma);\\n-\\t\\t\\tif (tmp \u003c upper) {\\n-\\t\\t\\t\\tupper \u003d ((int) (java.lang.Math.ceil(tmp))) - 1;\\n-\\t\\t\\t}\\n+\\t\\t\\ttmp \u003d mu + (k * sigma); \\t\\t\\tif (p \u003d\u003d 0.0) { \\t\\t\\t\\treturn lower;}\\n+\\n+\\n+\\n\\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 90,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 62,
+    "NR_GENERATIONS": 152,
+    "TOTAL_TIME": 474.962
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "304",
+      "VALIDATION": "|true|0|2171|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.ConvergingAlgorithmImpl",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-71\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java",
+          "INGREDIENT_SCOPE": "-",
+          "ORIGINAL_CODE": "this.relativeAccuracy \u003d defaultRelativeAccuracy",
+          "BUGGY_CODE_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "OPERATOR": "RemoveOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-304\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java",
+          "LINE": "65",
+          "SUSPICIOUNESS": "0,011",
+          "MP_RANKING": "410"
+        }
+      ],
+      "TIME": "474",
+      "GENERATION": "152",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-71\\/\\/src\\/\\/variant-304",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/ConvergingAlgorithmImpl.java\\n@@ -65 +65 @@\\n-\\t\\tthis.relativeAccuracy \u003d defaultRelativeAccuracy;\\n+\\n\\n"
+    }
+  ]
+}

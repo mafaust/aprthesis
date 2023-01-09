@@ -1,0 +1,7 @@
+--- /src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java
++++ /src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java
+@@ -70,0 +71,3 @@
++			// accept the contracted simplex
++			// check convergence
++			return;
+

@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 182,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 174,
+    "NR_GENERATIONS": 356,
+    "TOTAL_TIME": 684.369
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "712",
+      "VALIDATION": "|true|0|3199|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-40\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "1",
+          "INGREDIENT_PARENT": "signChangeIndex \u003d 2",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "\\/\\/ make a few attempts to guess a root,\\ndouble nextX",
+          "BUGGY_CODE_TYPE": "CtLocalVariableImpl|CtBlockImpl",
+          "OPERATOR": "InsertAfterOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-712\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java",
+          "LINE": "245",
+          "MP_RANKING": "1",
+          "PATCH_HUNK_CODE": "signChangeIndex \u003d 2"
+        }
+      ],
+      "TIME": "683",
+      "GENERATION": "356",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-40\\/\\/src\\/\\/variant-712",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/BracketingNthOrderBrentSolver.java\\n@@ -245 +245 @@\\n-\\t\\t\\tdouble nextX;\\n+\\t\\t\\tdouble nextX; \\t\\t\\tsignChangeIndex \u003d 2;\\n\\n"
+    }
+  ]
+}

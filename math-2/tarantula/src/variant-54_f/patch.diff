@@ -1,0 +1,16 @@
+--- /src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
++++ /src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java
+@@ -105,12 +104,0 @@
+-		if (chebyshevApplies) {
+-			double k = org.apache.commons.math3.util.FastMath.sqrt((1.0 - p) / p);
+-			double tmp = mu - (k * sigma);
+-			if (tmp > lower) {
+-				lower = ((int) (java.lang.Math.ceil(tmp))) - 1;
+-			}
+-			k = 1.0 / k;
+-			tmp = mu + (k * sigma);
+-			if (tmp < upper) {
+-				upper = ((int) (java.lang.Math.ceil(tmp))) - 1;
+-			}
+-		}
+

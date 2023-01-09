@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 79,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 58,
+    "NR_GENERATIONS": 137,
+    "TOTAL_TIME": 371.227
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "274",
+      "VALIDATION": "|true|0|4933|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math3.ode.AbstractIntegrator",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-7\\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/ode\\/AbstractIntegrator.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,088",
+          "INGREDIENT_PARENT": "eventsStates.clear()",
+          "PATCH_HUNK_TYPE": "CtInvocationImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "stepHandlers.add(handler)",
+          "BUGGY_CODE_TYPE": "CtInvocationImpl|CtBlockImpl",
+          "OPERATOR": "InsertBeforeOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-7\\/\\/src\\/\\/variant-274\\/org\\/apache\\/commons\\/math3\\/ode\\/AbstractIntegrator.java",
+          "LINE": "109",
+          "MP_RANKING": "449",
+          "PATCH_HUNK_CODE": "eventsStates.clear()"
+        }
+      ],
+      "TIME": "370",
+      "GENERATION": "137",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-7\\/\\/src\\/\\/variant-274",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/ode\\/AbstractIntegrator.java\\n+++ \\/src\\/main\\/java\\/org\\/apache\\/commons\\/math3\\/ode\\/AbstractIntegrator.java\\n@@ -109,2 +109 @@\\n-\\t *\\/ \\tpublic void addStepHandler(final org.apache.commons.math3.ode.sampling.StepHandler handler) { \\t\\tstepHandlers.add(handler);\\n-\\t}\\n+\\t *\\/ \\tpublic void addStepHandler(final org.apache.commons.math3.ode.sampling.StepHandler handler) {\\n@@ -112,4 +110,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic java.util.Collection\u003corg.apache.commons.math3.ode.sampling.StepHandler\u003e getStepHandlers() { \\t\\treturn java.util.Collections.unmodifiableCollection(stepHandlers);\\n-\\t}\\n@@ -117,4 +111,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic void clearStepHandlers() { \\t\\tstepHandlers.clear();\\n-\\t}\\n@@ -122,9 +112,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic void addEventHandler(final org.apache.commons.math3.ode.events.EventHandler handler, final double maxCheckInterval, final \\n-\\tdouble convergence, final \\n-\\tint maxIterationCount) {\\n-\\t\\taddEventHandler(handler, maxCheckInterval, convergence, \\n-\\t\\tmaxIterationCount, \\n-\\t\\tnew org.apache.commons.math3.analysis.solvers.BracketingNthOrderBrentSolver(convergence, 5));\\n-\\t}\\n@@ -132,9 +113,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic void addEventHandler(final org.apache.commons.math3.ode.events.EventHandler handler, final double maxCheckInterval, final \\n-\\tdouble convergence, final \\n-\\tint maxIterationCount, final \\n-\\torg.apache.commons.math3.analysis.solvers.UnivariateSolver solver) {\\n-\\t\\teventsStates.add(new org.apache.commons.math3.ode.events.EventState(handler, maxCheckInterval, convergence, \\n-\\t\\tmaxIterationCount, solver));\\n-\\t}\\n@@ -142,8 +114,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic java.util.Collection\u003corg.apache.commons.math3.ode.events.EventHandler\u003e getEventHandlers() { \\t\\tfinal java.util.List\u003corg.apache.commons.math3.ode.events.EventHandler\u003e list \u003d new java.util.ArrayList\u003corg.apache.commons.math3.ode.events.EventHandler\u003e();\\n-\\t\\tfor (org.apache.commons.math3.ode.events.EventState state : eventsStates) {\\n-\\t\\t\\tlist.add(state.getEventHandler());\\n-\\t\\t}\\n-\\t\\treturn java.util.Collections.unmodifiableCollection(list);\\n-\\t}\\n@@ -151,4 +115,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic void clearEventHandlers() { \\t\\teventsStates.clear();\\n-\\t}\\n@@ -156,4 +116,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic double getCurrentStepStart() { \\t\\treturn stepStart;\\n-\\t}\\n@@ -161,4 +117,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic double getCurrentSignedStepsize() { \\t\\treturn stepSize;\\n-\\t}\\n@@ -166,4 +118,0 @@\\n-\\t\\/**\\n-\\t * {@inheritDoc }\\n-\\t *\\/ \\tpublic void setMaxEvaluations(int maxEvaluations) { \\t\\tevaluations.setMaximalCount(maxEvaluations \u003c 0 ? java.lang.Integer.MAX_VALUE : maxEvaluations);\\n-\\t}\\n@@ -171 +120,52 @@\\n-\\t\\/**\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\t\\teventsStates.clear(); \\t\\tstepHandlers.add(handler);} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic java.util.Collection\u003corg.apache.commons.math3.ode.sampling.StepHandler\u003e getStepHandlers() { \\t\\treturn java.util.Collections.unmodifiableCollection(stepHandlers);} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic void clearStepHandlers() { \\t\\tstepHandlers.clear();} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic void addEventHandler(final org.apache.commons.math3.ode.events.EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount) { \\t\\taddEventHandler(handler, maxCheckInterval, convergence, maxIterationCount, new org.apache.commons.math3.analysis.solvers.BracketingNthOrderBrentSolver(convergence, 5));} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic void addEventHandler(final org.apache.commons.math3.ode.events.EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount, final org.apache.commons.math3.analysis.solvers.UnivariateSolver solver) { \\t\\teventsStates.add(new org.apache.commons.math3.ode.events.EventState(handler, maxCheckInterval, convergence, maxIterationCount, solver));} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic java.util.Collection\u003corg.apache.commons.math3.ode.events.EventHandler\u003e getEventHandlers() { \\t\\tfinal java.util.List\u003corg.apache.commons.math3.ode.events.EventHandler\u003e list \u003d new java.util.ArrayList\u003corg.apache.commons.math3.ode.events.EventHandler\u003e(); \\t\\tfor (org.apache.commons.math3.ode.events.EventState state : eventsStates) { \\t\\t\\tlist.add(state.getEventHandler());} \\t\\treturn java.util.Collections.unmodifiableCollection(list);} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic void clearEventHandlers() { \\t\\teventsStates.clear();} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic double getCurrentStepStart() { \\t\\treturn stepStart;} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic double getCurrentSignedStepsize() { \\t\\treturn stepSize;} \\t\\/**\\n+\\t * {@inheritDoc }\\n+\\t *\\/ \\tpublic void setMaxEvaluations(int maxEvaluations) { \\t\\tevaluations.setMaximalCount(maxEvaluations \u003c 0 ? java.lang.Integer.MAX_VALUE : maxEvaluations);} \\t\\/**\\n\\n"
+    }
+  ]
+}
