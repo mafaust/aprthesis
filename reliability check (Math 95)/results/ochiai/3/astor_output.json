@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 12,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 15,
+    "NR_GENERATIONS": 27,
+    "TOTAL_TIME": 106.185
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "54",
+      "VALIDATION": "|true|0|1303|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.distribution.FDistributionImpl",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-95\\/src\\/java\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,577",
+          "INGREDIENT_PARENT": "ret \u003d 0.0",
+          "PATCH_HUNK_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "\\/\\/ use mean\\nret \u003d d \\/ (d - 2.0)",
+          "BUGGY_CODE_TYPE": "CtAssignmentImpl|CtBlockImpl",
+          "OPERATOR": "ReplaceOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-95\\/\\/src\\/\\/variant-54\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java",
+          "LINE": "147",
+          "MP_RANKING": "5",
+          "PATCH_HUNK_CODE": "ret \u003d 0.0"
+        }
+      ],
+      "TIME": "105",
+      "GENERATION": "27",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-95\\/\\/src\\/\\/variant-54",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/java\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java\\n+++ \\/src\\/java\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java\\n@@ -145,3 +145,3 @@\\n-\\t\\tdouble d \u003d getDenominatorDegreesOfFreedom();\\n-\\t\\t\\/\\/ use mean\\n-\\t\\tret \u003d d \\/ (d - 2.0);\\n+\\t\\tdouble d \u003d getDenominatorDegreesOfFreedom(); \\t\\tret \u003d 0.0;\\n+\\n+\\n\\n"
+    }
+  ]
+}

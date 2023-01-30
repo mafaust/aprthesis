@@ -1,0 +1,227 @@
+package org.apache.commons.math.analysis;
+/**
+ * Utility routines for {@link UnivariateRealSolver} objects.
+ *
+ * @version $Revision$ $Date$
+ */
+public class UnivariateRealSolverUtils {
+	/**
+	 * Default constructor.
+	 */
+	private UnivariateRealSolverUtils() {
+		super();
+	}
+
+	/**
+	 * Cached solver factory
+	 */
+	private static org.apache.commons.math.analysis.UnivariateRealSolverFactory factory = null;
+
+	/**
+	 * Convenience method to find a zero of a univariate real function.  A default
+	 * solver is used.
+	 *
+	 * @param f
+	 * 		the function.
+	 * @param x0
+	 * 		the lower bound for the interval.
+	 * @param x1
+	 * 		the upper bound for the interval.
+	 * @return a value where the function is zero.
+	 * @throws ConvergenceException
+	 * 		if the iteration count was exceeded
+	 * @throws FunctionEvaluationException
+	 * 		if an error occurs evaluating
+	 * 		the function
+	 * @throws IllegalArgumentException
+	 * 		if f is null or the endpoints do not
+	 * 		specify a valid interval
+	 */
+	public static double solve(org.apache.commons.math.analysis.UnivariateRealFunction f, double x0, double x1) throws org.apache.commons.math.ConvergenceException, org.apache.commons.math.FunctionEvaluationException {
+		org.apache.commons.math.analysis.UnivariateRealSolverUtils.setup(f);
+		return org.apache.commons.math.analysis.UnivariateRealSolverUtils.factory.newDefaultSolver(f).solve(x0, x1);
+	}
+
+	/**
+	 * Convenience method to find a zero of a univariate real function.  A default
+	 * solver is used.
+	 *
+	 * @param f
+	 * 		the function
+	 * @param x0
+	 * 		the lower bound for the interval
+	 * @param x1
+	 * 		the upper bound for the interval
+	 * @param absoluteAccuracy
+	 * 		the accuracy to be used by the solver
+	 * @return a value where the function is zero
+	 * @throws ConvergenceException
+	 * 		if the iteration count is exceeded
+	 * @throws FunctionEvaluationException
+	 * 		if an error occurs evaluating the
+	 * 		function
+	 * @throws IllegalArgumentException
+	 * 		if f is null, the endpoints do not
+	 * 		specify a valid interval, or the absoluteAccuracy is not valid for the
+	 * 		default solver
+	 */
+	public static double solve(org.apache.commons.math.analysis.UnivariateRealFunction f, double x0, double x1, double absoluteAccuracy) throws org.apache.commons.math.ConvergenceException, org.apache.commons.math.FunctionEvaluationException {
+		org.apache.commons.math.analysis.UnivariateRealSolverUtils.setup(f);
+		org.apache.commons.math.analysis.UnivariateRealSolver solver = org.apache.commons.math.analysis.UnivariateRealSolverUtils.factory.newDefaultSolver(f);
+		solver.setAbsoluteAccuracy(absoluteAccuracy);
+		return solver.solve(x0, x1);
+	}
+
+	/**
+	 * This method attempts to find two values a and b satisfying <ul>
+	 * <li> <code> lowerBound <= a < initial < b <= upperBound</code> </li>
+	 * <li> <code> f(a) * f(b) < 0 </code></li>
+	 * </ul>
+	 * If f is continuous on <code>[a,b],</code> this means that <code>a</code>
+	 * and <code>b</code> bracket a root of f.
+	 * <p>
+	 * The algorithm starts by setting
+	 * <code>a := initial -1; b := initial +1,</code> examines the value of the
+	 * function at <code>a</code> and <code>b</code> and keeps moving
+	 * the endpoints out by one unit each time through a loop that terminates
+	 * when one of the following happens: <ul>
+	 * <li> <code> f(a) * f(b) < 0 </code> --  success!</li>
+	 * <li> <code> a = lower </code> and <code> b = upper</code>
+	 * -- ConvergenceException </li>
+	 * <li> <code> Integer.MAX_VALUE</code> iterations elapse
+	 * -- ConvergenceException </li>
+	 * </ul></p>
+	 * <p>
+	 * <strong>Note: </strong> this method can take
+	 * <code>Integer.MAX_VALUE</code> iterations to throw a
+	 * <code>ConvergenceException.</code>  Unless you are confident that there
+	 * is a root between <code>lowerBound</code> and <code>upperBound</code>
+	 * near <code>initial,</code> it is better to use
+	 * {@link #bracket(UnivariateRealFunction, double, double, double, int)},
+	 * explicitly specifying the maximum number of iterations.</p>
+	 *
+	 * @param function
+	 * 		the function
+	 * @param initial
+	 * 		initial midpoint of interval being expanded to
+	 * 		bracket a root
+	 * @param lowerBound
+	 * 		lower bound (a is never lower than this value)
+	 * @param upperBound
+	 * 		upper bound (b never is greater than this
+	 * 		value)
+	 * @return a two element array holding {a, b}
+	 * @throws ConvergenceException
+	 * 		if a root can not be bracketted
+	 * @throws FunctionEvaluationException
+	 * 		if an error occurs evaluating the
+	 * 		function
+	 * @throws IllegalArgumentException
+	 * 		if function is null, maximumIterations
+	 * 		is not positive, or initial is not between lowerBound and upperBound
+	 */
+	public static double[] bracket(org.apache.commons.math.analysis.UnivariateRealFunction function, double initial, double lowerBound, double upperBound) throws org.apache.commons.math.ConvergenceException, org.apache.commons.math.FunctionEvaluationException {
+		return org.apache.commons.math.analysis.UnivariateRealSolverUtils.bracket(function, initial, lowerBound, upperBound, java.lang.Integer.MAX_VALUE);
+	}
+
+	/**
+	 * This method attempts to find two values a and b satisfying <ul>
+	 * <li> <code> lowerBound <= a < initial < b <= upperBound</code> </li>
+	 * <li> <code> f(a) * f(b) < 0 </code> </li>
+	 * </ul>
+	 * If f is continuous on <code>[a,b],</code> this means that <code>a</code>
+	 * and <code>b</code> bracket a root of f.
+	 * <p>
+	 * The algorithm starts by setting
+	 * <code>a := initial -1; b := initial +1,</code> examines the value of the
+	 * function at <code>a</code> and <code>b</code> and keeps moving
+	 * the endpoints out by one unit each time through a loop that terminates
+	 * when one of the following happens: <ul>
+	 * <li> <code> f(a) * f(b) < 0 </code> --  success!</li>
+	 * <li> <code> a = lower </code> and <code> b = upper</code>
+	 * -- ConvergenceException </li>
+	 * <li> <code> maximumIterations</code> iterations elapse
+	 * -- ConvergenceException </li></ul></p>
+	 *
+	 * @param function
+	 * 		the function
+	 * @param initial
+	 * 		initial midpoint of interval being expanded to
+	 * 		bracket a root
+	 * @param lowerBound
+	 * 		lower bound (a is never lower than this value)
+	 * @param upperBound
+	 * 		upper bound (b never is greater than this
+	 * 		value)
+	 * @param maximumIterations
+	 * 		maximum number of iterations to perform
+	 * @return a two element array holding {a, b}.
+	 * @throws ConvergenceException
+	 * 		if the algorithm fails to find a and b
+	 * 		satisfying the desired conditions
+	 * @throws FunctionEvaluationException
+	 * 		if an error occurs evaluating the
+	 * 		function
+	 * @throws IllegalArgumentException
+	 * 		if function is null, maximumIterations
+	 * 		is not positive, or initial is not between lowerBound and upperBound
+	 */
+	public static double[] bracket(org.apache.commons.math.analysis.UnivariateRealFunction function, double initial, double lowerBound, double upperBound, int maximumIterations) throws org.apache.commons.math.ConvergenceException, org.apache.commons.math.FunctionEvaluationException {
+		if (function == null) {
+			throw new java.lang.IllegalArgumentException("function is null.");
+		}
+		if (maximumIterations <= 0) {
+			throw new java.lang.IllegalArgumentException("bad value for maximumIterations: " + maximumIterations);
+		}
+		if (((initial < lowerBound) || (initial > upperBound)) || (lowerBound >= upperBound)) {
+			throw new java.lang.IllegalArgumentException((((("Invalid endpoint parameters:  lowerBound=" + lowerBound) + " initial=") + initial) + " upperBound=") + upperBound);
+		}
+		double a = initial;
+		double b = initial;
+		double fa;
+		double fb;
+		int numIterations = 0;
+		do {
+			a = java.lang.Math.max(a - 1.0, lowerBound);
+			b = java.lang.Math.min(b + 1.0, upperBound);
+			fa = function.value(a);
+			fb = function.value(b);
+			numIterations++;
+		} while ((((fa * fb) > 0.0) && (numIterations < maximumIterations)) && ((a > lowerBound) || (b < upperBound)) );
+		if ((fa * fb) >= 0.0) {
+			throw new org.apache.commons.math.ConvergenceException("Number of iterations={0}, maximum iterations={1}, initial={2}, lower bound={3}, upper bound={4}, final a value={5}, final b value={6}, f(a)={7}, f(b)={8}", new java.lang.Object[]{ java.lang.Integer.valueOf(numIterations), java.lang.Integer.valueOf(maximumIterations), java.lang.Double.valueOf(initial), java.lang.Double.valueOf(lowerBound), java.lang.Double.valueOf(upperBound), java.lang.Double.valueOf(a), java.lang.Double.valueOf(b), java.lang.Double.valueOf(fa), java.lang.Double.valueOf(fb) });
+		}
+		return new double[]{ a, b };
+	}
+
+	/**
+	 * Compute the midpoint of two values.
+	 *
+	 * @param a
+	 * 		first value.
+	 * @param b
+	 * 		second value.
+	 * @return the midpoint.
+	 */
+	public static double midpoint(double a, double b) {
+		return (a + b) * 0.5;
+	}
+
+	/**
+	 * Checks to see if f is null, throwing IllegalArgumentException if so.
+	 * Also initializes factory if factory is null.
+	 *
+	 * @param f
+	 * 		input function
+	 * @throws IllegalArgumentException
+	 * 		if f is null
+	 */
+	private static void setup(org.apache.commons.math.analysis.UnivariateRealFunction f) {
+		if (f == null) {
+			throw new java.lang.IllegalArgumentException("function can not be null.");
+		}
+		if (org.apache.commons.math.analysis.UnivariateRealSolverUtils.factory == null) {
+			org.apache.commons.math.analysis.UnivariateRealSolverUtils.factory = org.apache.commons.math.analysis.UnivariateRealSolverFactory.newInstance();
+		}
+	}
+}

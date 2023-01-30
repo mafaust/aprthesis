@@ -1,0 +1,38 @@
+{
+  "general": {
+    "NR_RIGHT_COMPILATIONS": 26,
+    "EXECUTION_IDENTIFIER": "",
+    "FAULT_LOCALIZATION": "flacoco",
+    "OUTPUT_STATUS": "STOP_BY_PATCH_FOUND",
+    "NR_FAILLING_COMPILATIONS": 14,
+    "NR_GENERATIONS": 40,
+    "TOTAL_TIME": 56.53
+  },
+  "patches": [
+    {
+      "VARIANT_ID": "80",
+      "VALIDATION": "|true|0|1303|[]|",
+      "patchhunks": [
+        {
+          "LOCATION": "org.apache.commons.math.distribution.FDistributionImpl",
+          "PATH": "\\/Users\\/marekmazur\\/astor\\/defects4j\\/math-95\\/src\\/java\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java",
+          "INGREDIENT_SCOPE": "LOCAL",
+          "SUSPICIOUNESS": "0,5",
+          "INGREDIENT_PARENT": "return numeratorDegreesOfFreedom",
+          "PATCH_HUNK_TYPE": "CtReturnImpl|CtBlockImpl",
+          "ORIGINAL_CODE": "return ret",
+          "BUGGY_CODE_TYPE": "CtReturnImpl|CtBlockImpl",
+          "OPERATOR": "ReplaceOp",
+          "MODIFIED_FILE_PATH": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-95\\/\\/src\\/\\/variant-80\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java",
+          "LINE": "148",
+          "MP_RANKING": "6",
+          "PATCH_HUNK_CODE": "return numeratorDegreesOfFreedom"
+        }
+      ],
+      "TIME": "56",
+      "GENERATION": "40",
+      "FOLDER_SOLUTION_CODE": "\\/Users\\/marekmazur\\/astor\\/.\\/output_astor\\/AstorMain-math-95\\/\\/src\\/\\/variant-80",
+      "PATCH_DIFF_ORIG": "--- \\/src\\/java\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java\\n+++ \\/src\\/java\\/org\\/apache\\/commons\\/math\\/distribution\\/FDistributionImpl.java\\n@@ -148,2 +147,0 @@\\n-\\t\\treturn ret;\\n-\\t}\\n@@ -151 +149,22 @@\\n-\\t\\/**\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\t\\treturn numeratorDegreesOfFreedom;} \\t\\/**\\n@@ -159,7 +178 @@\\n-\\t *\\/ \\tpublic void setNumeratorDegreesOfFreedom(double degreesOfFreedom) { \\t\\tif (degreesOfFreedom \u003c\u003d 0.0) { \\t\\t\\tthrow new java.lang.IllegalArgumentException(\\n-\\t\\t\\t\\\"degrees of freedom must be positive.\\\");\\n-\\t\\t}\\n-\\t\\tthis.numeratorDegreesOfFreedom \u003d degreesOfFreedom;\\n-\\t}\\n-\\n-\\t\\/**\\n+\\t *\\/ \\tpublic void setNumeratorDegreesOfFreedom(double degreesOfFreedom) { \\t\\tif (degreesOfFreedom \u003c\u003d 0.0) { \\t\\t\\tthrow new java.lang.IllegalArgumentException(\\\"degrees of freedom must be positive.\\\");} \\t\\tthis.numeratorDegreesOfFreedom \u003d degreesOfFreedom;} \\t\\/**\\n@@ -169,5 +182 @@\\n-\\t *\\/ \\tpublic double getNumeratorDegreesOfFreedom() {\\n-\\t\\treturn numeratorDegreesOfFreedom;\\n-\\t}\\n-\\n-\\t\\/**\\n+\\t *\\/ \\tpublic double getNumeratorDegreesOfFreedom() { \\t\\treturn numeratorDegreesOfFreedom;} \\t\\/**\\n@@ -181,7 +190 @@\\n-\\t *\\/ \\tpublic void setDenominatorDegreesOfFreedom(double degreesOfFreedom) { \\t\\tif (degreesOfFreedom \u003c\u003d 0.0) { \\t\\t\\tthrow new java.lang.IllegalArgumentException(\\n-\\t\\t\\t\\\"degrees of freedom must be positive.\\\");\\n-\\t\\t}\\n-\\t\\tthis.denominatorDegreesOfFreedom \u003d degreesOfFreedom;\\n-\\t}\\n-\\n-\\t\\/**\\n+\\t *\\/ \\tpublic void setDenominatorDegreesOfFreedom(double degreesOfFreedom) { \\t\\tif (degreesOfFreedom \u003c\u003d 0.0) { \\t\\t\\tthrow new java.lang.IllegalArgumentException(\\\"degrees of freedom must be positive.\\\");} \\t\\tthis.denominatorDegreesOfFreedom \u003d degreesOfFreedom;} \\t\\/**\\n@@ -191,3 +194 @@\\n-\\t *\\/ \\tpublic double getDenominatorDegreesOfFreedom() {\\n-\\t\\treturn denominatorDegreesOfFreedom;\\n-\\t}}\\n\\\\ No newline at end of file\\n+\\t *\\/ \\tpublic double getDenominatorDegreesOfFreedom() { \\t\\treturn denominatorDegreesOfFreedom;}}\\n\\\\ No newline at end of file\\n\\n"
+    }
+  ]
+}
